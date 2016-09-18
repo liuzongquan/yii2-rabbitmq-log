@@ -1,5 +1,5 @@
 {
-    "name": "liuzongquan/yii2-rabbitmq-log",
+    "name": "yii2-rabbitmq-log",
     "description": "Yii 2 extension wrapper to communicate with RabbitMQ server via AMQP. Based on php-amqplib/php-amqplib.",
     "keywords": ["yii2", "extension", "log", "RabbitMQ"],
     "homepage": "https://github.com/liuzongquan/yii2-rabbitmq-log",
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "rabbitmq\\log": "*"
+            "yidu\\rabbitmq": "*"
         }
     }
 }
