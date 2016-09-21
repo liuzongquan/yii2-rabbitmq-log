@@ -26,6 +26,7 @@ class RabbitmqTarget extends Target
     public function init(){
         parent::init();
         $this->rabbitmq= new Amqp();
+        date_default_timezone_set("Asia/Hong_Kong");
     }
 
     /**
