@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\log;
+namespace yidu\rabbitmq\log;
 
 use Yii;
 use yii\base\InvalidConfigException;
