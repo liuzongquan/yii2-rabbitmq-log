@@ -87,6 +87,11 @@ class Amqp extends Component
             throw new Exception("Parameter 'user' was not set for AMQP connection.");
         }
         if (empty(self::$ampqConnection)) {
+            self::$host = \Yii::$app->params['rabbitmq']['host'];
+            self::$port = \Yii::$app->params['rabbitmq']['port'];
+            self::$user = \Yii::$app->params['rabbitmq']['user'];
+            self::$password = \Yii::$app->params['rabbitmq']['password'];
+            self::$vhost = \Yii::$app->params['rabbitmq']['vhost'];
             self::$ampqConnection =new AMQPStreamConnection(
                 self::$host,
                 self::$port,
