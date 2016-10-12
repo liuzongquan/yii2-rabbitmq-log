@@ -10,7 +10,7 @@ namespace yidu\rabbitmq\log;
 
 use yidu\rabbitmq\components\Amqp;
 use yii\helpers\VarDumper;
-use yii\log\target;
+use yii\log\Target;
 use yii\log\Logger;
 use yii\base\InvalidConfigException;
 
