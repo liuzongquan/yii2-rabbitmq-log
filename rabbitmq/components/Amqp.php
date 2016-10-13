@@ -55,27 +55,27 @@ class Amqp extends Component
     /**
      * @var string
      */
-    public static $host = 'localhost';
+    public  $host = 'localhost';
 
     /**
      * @var integer
      */
-    public static $port = 5672;
+    public  $port = 5672;
 
     /**
      * @var string
      */
-    public static $user = 'guest';
+    public  $user = 'guest';
 
     /**
      * @var string
      */
-    public static $password = 'guest';
+    public  $password = 'guest';
 
     /**
      * @var string
      */
-    public static $vhost = '/';
+    public  $vhost = '/';
 
     /**
      * @inheritdoc
@@ -83,15 +83,16 @@ class Amqp extends Component
     public function init()
     {
         parent::init();
-        if (empty(self::$user)) {
-            throw new Exception("Parameter 'user' was not set for AMQP connection.");
-        }
+//         if (empty(self::$user)) {
+//             throw new Exception("Parameter 'user' was not set for AMQP connection.");
+//         }
+        self::$ampqConnection = \Yii::$app->amqp_conn;
         if (empty(self::$ampqConnection)) {
-            self::$host = \Yii::$app->params['rabbitmq']['host'];
-            self::$port = \Yii::$app->params['rabbitmq']['port'];
-            self::$user = \Yii::$app->params['rabbitmq']['user'];
-            self::$password = \Yii::$app->params['rabbitmq']['password'];
-            self::$vhost = \Yii::$app->params['rabbitmq']['vhost'];
+            $this->host = \Yii::$app->params['rabbitmq']['host'];
+            $this->port = \Yii::$app->params['rabbitmq']['port'];
+            $this->user = \Yii::$app->params['rabbitmq']['user'];
+            $this->password = \Yii::$app->params['rabbitmq']['password'];
+            $this->vhost = \Yii::$app->params['rabbitmq']['vhost'];
             self::$ampqConnection =new AMQPStreamConnection(
                 self::$host,
                 self::$port,
